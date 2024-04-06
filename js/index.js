@@ -43,13 +43,13 @@ console.log(hacker2Inverso)
 // * El nombre del conductor va primero.
 // * Yo, el navegador va primero definitivamente.
 // * ¿Qué? ¿Los dos tienen el mismo nombre?
-let strings = [
-  "El nombre del conductor va primero.",
-  "Yo, el navegador va primero definitivamente.",
-  "¿Qué? ¿Los dos tienen el mismo nombre?",
-].sort()
-for (let i = 0; i < strings.length; i++) {
-  console.log(strings[i])
+
+if (hacker1.localeCompare(hacker2) < 0) {
+  console.log("El nombre del conductor va primero.")
+} else if (hacker1.localeCompare(hacker2) > 0) {
+  console.log("Yo, el navegador voy primero definitivamente.")
+} else {
+  console.log("¿Qué? ¿Los dos tienen el mismo nombre?")
 }
 
 // Bono 1: Ve al generador de lorem ipsum y:
@@ -63,7 +63,7 @@ Nulla urna velit, iaculis commodo lobortis eu, mollis vitae tortor. Donec sit am
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet vitae lectus nec luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse lobortis lobortis metus. Etiam in ipsum eleifend neque mattis vehicula sed eget mauris. Quisque placerat massa consequat dui porta finibus. Fusce a diam vel nibh vulputate mollis ac vel sem. Praesent congue arcu in eros sollicitudin, sed ullamcorper lacus facilisis. Fusce a quam sit amet enim efficitur viverra. Vestibulum ut elementum ligula, at aliquet risus. Sed luctus orci sed maximus vestibulum.`
 const wordNum = loremIpsum.split(/\s/).length
-const etNum = loremIpsum.search("et")
+let etCount = (loremIpsum.match(/ et /g) || []).length
 console.log("Número de palabras:", wordNum)
 console.log("Número de veces que aparece la palabra 'et':", etNum)
 
