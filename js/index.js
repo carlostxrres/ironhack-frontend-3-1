@@ -78,12 +78,12 @@ console.log("Número de veces que aparece la palabra 'et':", etNum)
 
 const phraseToCheck = "Atar a la rata" // Es palíndromo
 const cleanPhrase = phraseToCheck.toLowerCase().replace(/[\s,]/g, "")
-const phraseLength = phraseToCheck.length
+const phraseLength = cleanPhrase.length
 
 let isPalindrome = true
-for (let i = 0; i < phraseToCheck.length; i++) {
-  const fromStart = phraseToCheck.charAt(i)
-  const fromEnd = phraseToCheck.charAt(phraseLength - i - 1)
+for (let i = 0; i < cleanPhrase.length; i++) {
+  const fromStart = cleanPhrase.charAt(i)
+  const fromEnd = cleanPhrase.charAt(phraseLength - i - 1)
 
   if (fromStart !== fromEnd) {
     isPalindrome = false
